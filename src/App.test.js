@@ -1,14 +1,13 @@
 import { render, screen } from '@testing-library/react';
+import { act } from 'react-dom/test-utils'; // Import act from react-dom/test-utils
 import App from './App'; // Replace with your actual component import
 
 test('renders learn react link', () => {
-  render(<App />);
-  
-  const linkElement = screen.getByText((content, element) => {
-    // Use a regular expression to match text case-insensitively
-    const textContent = element.textContent || '';
-    return textContent.match(/learn react/i);
+  act(() => {
+    render(<App />);
   });
-
+  
+  const linkElement = screen.getByText(/learn react/i);
+  
   expect(linkElement).toBeInTheDocument();
 });
