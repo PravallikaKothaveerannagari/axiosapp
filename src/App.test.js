@@ -1,13 +1,12 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { act } from 'react-dom/test-utils'; // Import act from react-dom/test-utils
-import App from './App'; // Replace with your actual component import
+import App from './App'; // Adjust the import path as per your project structure
 
 test('renders learn react link', () => {
-  act(() => {
-    render(<App />);
-  });
-  
+  render(<App />);
+
+  // Use a query selector to find the text case-insensitively
   const linkElement = screen.getByText(/learn react/i);
-  
+
   expect(linkElement).toBeInTheDocument();
 });
