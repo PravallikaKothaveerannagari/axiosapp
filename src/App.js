@@ -1,5 +1,6 @@
 // Filename - App.js
 
+import './App.css';
 import axios from "axios";
 import React from "react";
 
